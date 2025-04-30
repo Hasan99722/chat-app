@@ -4,7 +4,7 @@ set -e
 
 # Variables
 IMAGE_NAME=testapp
-ECR_URI=762233754891.dkr.ecr.us-east-1.amazonaws.com/testapp
+ECR_URI=762233754891.dkr.ecr.us-east-1.amazonaws.com
 AWS_REGION=us-east-1
 CONTAINER_NAME=nginx-server
 
@@ -19,6 +19,6 @@ echo "Pulling latest image..."
 docker pull $ECR_URI/$IMAGE_NAME:latest
 
 echo "Starting new container..."
-docker run -d --name $CONTAINER_NAME -p 80:80 $ECR_URI/$IMAGE_NAME:latest
+docker run -d --name $CONTAINER_NAME -p 80:3000 $ECR_URI/$IMAGE_NAME:latest
 
 echo "Deployment complete."
