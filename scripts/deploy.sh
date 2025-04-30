@@ -6,7 +6,7 @@ set -e
 IMAGE_NAME=testapp
 ECR_URI=762233754891.dkr.ecr.us-east-1.amazonaws.com/testapp
 AWS_REGION=us-east-1
-CONTAINER_NAME=test-server
+CONTAINER_NAME=nginx-server
 
 echo "Logging in to ECR..."
 aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ECR_URI
